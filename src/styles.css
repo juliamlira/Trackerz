@@ -1,75 +1,271 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    --first-color: #f74d10;
-    --title-color: #27194a;
-    --text-color: #27194a;
-    --body-color: #fff;
-    --container-color: #fff;
-    --font-semi-bold: 600;
-    --font-bold: 700;
-    --header-height: 3rem;
+  --first-color: #f74d10;
+  --text-color: #27194a;
+  --subtitle-color: #6a6a6a;
+  --body-color: #fff;
+  --container-color: #fff;
+  --font-semi-bold: 700;
+  --font-bold: 900;
+  --header-height: 3rem;
 }
 
 body {
-    margin: var(--header-height) 0 0 0;
-    font-family: "Poppins", sans-serif;
-    background-color: var(--body-color);
-    color: var(--text-color);
-    transition: 0.5s;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  margin-top: -5rem;
+  transition: 0.5s;
 }
-
-h1, h2, h3 {
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
-    line-height: 1.5;
+h1,
+h2,
+h3 {
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  line-height: 1.3;
 }
-
+/* =============== BASIC STRUCTURE =============== */
 ul {
-    list-style: none;
+  list-style: none;
 }
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
-
 .container {
-    max-width: 968px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 60.5rem;
+  margin: 0 auto;
 }
-
 .grid {
-    display: grid;
-    gap: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
 }
-
+.section {
+  padding: 6rem 0 2rem;
+}
+/* =============== HEADER =============== */
 .header {
-    width: 100%;
-    background-color: var(--body-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
 }
-
 .nav {
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.nav__logo, h2 {
-    color: var(--first-color);
+.nav__logo,
+h2 {
+  color: var(--first-color);
+}
+.nav__link,
+.nav__logo {
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.7rem;
+  font-size: 0.9rem;
+  justify-content: center;
+  margin-right: -6rem;
+  align-items: center;
+  gap: 1.2rem;
+  row-gap: 1.5rem;
+}
+.navigation a {
+position: relative;
+color: var(--text-color);
+font-weight: var(--font-semi-bold);
+}
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 0.145rem;
+  background: var(--first-color);
+  border-radius: 0.5rem;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .4s;
+}
+.navigation a:hover::after {
+  transform: scaleX(1);
+}
+/* .navigation a:hover {
+  color: var(--first-color);
+  transition: transform .5s;
+} */
+.button {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+  border: none;
+}
+.button1__header {
+  background-color: transparent;
+  border: 0.125rem solid var(--text-color);
+  color: var(--text-color);
+  margin-right: -10rem;
+}
+.button2__header {
+  margin-right: 7rem;
+  padding: 0.82rem;
+}
+/* =============== MAIN - HOME SECTION =============== */
+.home__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 0 2rem;
+}
+.home__img {
+  order: 1;
+  width: 100%;
+  max-width: 51%;
+  height: auto;
+}
+.home__title {
+  font-size: 2.8125rem;
+  margin-bottom: 1rem;
+}
+.home__description {
+  font-size: 0.875rem;
+  padding-right: 5rem;
+  color: var(--subtitle-color);
+}
+.right-title {
+  color: var(--first-color);
+}
+/* =============== BOX CONTAINER =============== */
+.box__container {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+/* =============== BOX LEFT =============== */
+.box__left {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  padding-left: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--text-color);
+  color: var(--container-color);
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+.tracking-package-left {
+  display: flex;
+  border-radius: 0.6rem;
+  align-items: center;
+  gap: 1rem;
+}
+.tracking-package-left input,
+.tracking-package-left button {
+  height: 2.5rem;
+}
+.tracking-package-left input {
+  width: 18.75rem;
+  border: 0;
+  outline: 0;
+  padding: 0.625rem;
+  border-radius: 0.6rem;
+}
+.tracking-package-left button {
+  flex: 1;
+  background: var(--first-color);
+  border: 0;
+  outline: 0;
+  color: var(--body-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.625rem 1.0625rem;
+  border-radius: 0.6rem;
+}
+.box__left__subtitle {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--subtitle-color);
+  margin-top: 0;
+  font-size: 0.7rem;
+  font-style: italic;
+}
+/* =============== BOX RIGHT =============== */
+.box__right {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  padding-left: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--first-color);
+  color: var(--container-color);
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+.tracking-package-right {
+  display: flex;
+  align-items: center;
+}
+.tracking-package-right input,
+.tracking-package-right button {
+  height: 2.5rem;
+}
+.tracking-package-right input {
+  width: 7.5rem;
+  border: 0;
+  outline: 0;
+  padding: 0.625rem;
+  border-radius: 0.6rem;
+}
+.tracking-package-right .input-container .input-group:nth-child(3) input {
+  width: 2.5rem;
+}
+.tracking-package-right button {
+  background: var(--text-color);
+  border: 0;
+  color: var(--container-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.625rem 2rem;
+  margin-right: 1rem;
+  border-radius: 0.6rem;
+}
+/* =============== COMMON BOX RULES =============== */
+.input-container {
+  display: flex;
+  gap: 0.625rem;
+}
+.subtitle {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.5rem;
+  font-style: italic;
+  margin-top: 1rem;
 }
